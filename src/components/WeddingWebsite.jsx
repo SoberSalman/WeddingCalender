@@ -5,7 +5,6 @@ import { Calendar, Heart, Clock, MapPin, Users, ChevronLeft, ChevronRight, X, Na
 const WeddingWebsite = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [currentDate, setCurrentDate] = useState(new Date(2025, 1, 1));
-  const [selectedImage, setSelectedImage] = useState(null);
   const [showAccessModal, setShowAccessModal] = useState(true);
   const [accessCode, setAccessCode] = useState('');
   const [accessLevel, setAccessLevel] = useState(null);
@@ -24,15 +23,7 @@ const WeddingWebsite = () => {
     date: "April 15, 2025"
   };
 
-  // Gallery images
-  const galleryImages = [
-    { id: 1, title: "Engagement Photo", src: "src/assets/Eng.jpg", description: "Our engagement photoshoot" },
-    { id: 2, title: "First Date", src: "/api/placeholder/400/300", description: "Where we first met" },
-    { id: 3, title: "Proposal", src: "/api/placeholder/400/300", description: "The special moment" },
-    { id: 4, title: "Together", src: "/api/placeholder/400/300", description: "Our favorite memory" },
-    { id: 5, title: "Family", src: "/api/placeholder/400/300", description: "With our loved ones" },
-    { id: 6, title: "Adventure", src: "/api/placeholder/400/300", description: "Our travels together" }
-  ];
+
 
   // Updated events data structure to handle multiple events per date
   const events = {
@@ -387,54 +378,6 @@ const WeddingWebsite = () => {
                 )}
               </div>
             </div>
-
-            {/* Photo Gallery Section */}
-            <div className="bg-white rounded-lg shadow-md p-6">
-              <h2 className="text-2xl font-semibold mb-6">Our Photo Gallery</h2>
-              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                {galleryImages.map((image) => (
-                  <div
-                    key={image.id}
-                    className="relative group cursor-pointer"
-                    onClick={() => setSelectedImage(image)}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.title}
-                      className="w-full h-48 object-cover rounded-lg transition-transform transform group-hover:scale-105"
-                    />
-                    <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity rounded-lg flex items-center justify-center">
-                      <p className="text-white opacity-0 group-hover:opacity-100 font-medium">
-                        {image.title}
-                      </p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Image Modal */}
-            {selectedImage && (
-              <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-                <div className="max-w-4xl w-full bg-white rounded-lg relative">
-                  <button
-                    onClick={() => setSelectedImage(null)}
-                    className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
-                  >
-                    <X className="w-6 h-6" />
-                  </button>
-                  <div className="p-6">
-                    <img
-                      src={selectedImage.src}
-                      alt={selectedImage.title}
-                      className="w-full h-96 object-contain mb-4"
-                    />
-                    <h3 className="text-xl font-semibold mb-2">{selectedImage.title}</h3>
-                    <p className="text-gray-600">{selectedImage.description}</p>
-                  </div>
-                </div>
-              </div>
-            )}
           </main>
           </>
         )}
