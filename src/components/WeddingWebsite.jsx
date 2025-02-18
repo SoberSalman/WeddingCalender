@@ -157,7 +157,7 @@ const WeddingWebsite = () => {
       setAccessLevel(accessCodes[savedCode]);
       setShowAccessModal(false);
     }
-  }, []);
+  }, []); // Make sure the dependency array is empty
 
 
   const openDirections = (coordinates) => {
@@ -226,12 +226,17 @@ const WeddingWebsite = () => {
         <form onSubmit={handleAccessSubmit} className="space-y-4">
         <input
           type="text"
+          pattern="[A-Za-z0-9]*"
+          inputMode="text"
+          autoCapitalize="characters"
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value.toUpperCase())}
           placeholder="Enter your access code"
           className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
           autoComplete="off"
+          autoFocus
         />
+
           <button
             type="submit"
             className="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors"
@@ -365,9 +370,9 @@ const WeddingWebsite = () => {
               {/* Event Details Section - Updated to show multiple events */}
               <div className="bg-white rounded-lg shadow-md p-6">
                 <h2 className="text-2xl font-semibold mb-4">Event Details</h2>
-                {selectedDate && events[selectedDate] ? (
+                {selectedDate && accessibleEvents[selectedDate] ? (
                   <div className="space-y-6">
-                    {events[selectedDate].map((event, index) => (
+                   {accessibleEvents[selectedDate].map((event, index) => (
                       <EventCard key={index} event={event} />
                     ))}
                   </div>
