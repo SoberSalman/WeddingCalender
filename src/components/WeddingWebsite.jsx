@@ -233,16 +233,14 @@ const WeddingWebsite = () => {
           </div>
         )}
         <form onSubmit={handleAccessSubmit} className="space-y-4">
-          <input
-            type="text"
-            inputMode="text"
-            value={accessCode}
-            onChange={(e) => setAccessCode(e.target.value)}
-            placeholder="Enter your access code"
-            className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
-            autoComplete="off"
-            autoCapitalize="characters"
-          />
+        <input
+          type="text"
+          value={accessCode}
+          onChange={(e) => setAccessCode(e.target.value.toUpperCase())}
+          placeholder="Enter your access code"
+          className="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-pink-500"
+          autoComplete="off"
+        />
           <button
             type="submit"
             className="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors"
