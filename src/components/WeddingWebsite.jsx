@@ -421,7 +421,7 @@ const WeddingWebsite = () => {
                   {couple.partner1} & {couple.partner2}
                 </h1>
                 <p className="text-white text-xl px-4 py-2 bg-pink-600 bg-opacity-40 inline-block rounded-full backdrop-blur-sm border border-pink-200 border-opacity-30 shadow-sm">
-                  <b>The Wedding #BASH</b>
+                  <b>The Wedding #THEBASH</b>
                 </p>
               </div>
             </div>
@@ -649,7 +649,7 @@ const WeddingWebsite = () => {
                   We're excited to share our special day with you. Please use the calendar to navigate through our wedding events.
                 </p>
                 <div className="inline-flex items-center px-4 py-2 bg-white bg-opacity-20 rounded-full backdrop-blur-sm border border-white border-opacity-30">
-                  <span className="text-lg">{couple.date}</span>
+                  <span className="text-lg">{'April 11th - 13th, 2025'}</span>
                 </div>
               </div>
             </div>
