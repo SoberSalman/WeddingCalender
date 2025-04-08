@@ -26,7 +26,7 @@ const WeddingWebsite = () => {
   const events = {
     "2025-04-08": [{
       title: "Mayon",
-      time: "7:30 PM",
+      time: "6:30 PM",
       location: "Askari 3",
       attire: "Shalwaar Kameez",
       details: "Join us to celebrate with family and friends",
@@ -38,7 +38,7 @@ const WeddingWebsite = () => {
     }],
     "2025-04-09": [{
       title: "Dholki",
-      time: "7:30 PM",
+      time: "7:00 PM",
       location: "Gulberg Residencia",
       attire: "Shalwaar Kameez",
       details: "Join us to celebrate with family and friends",
