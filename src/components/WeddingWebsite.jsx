@@ -121,7 +121,7 @@ const WeddingWebsite = () => {
       case 'limited':
         return Object.entries(events).reduce((acc, [date, eventList]) => {
           const filteredEvents = eventList.filter(event => 
-            !['Baraat', 'Walima'].some(keyword => 
+            !['Mayon', 'Dholki','Nikkah','Baraat'].some(keyword => 
               event.title.includes(keyword)
             )
           );
